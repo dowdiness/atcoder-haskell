@@ -28,6 +28,12 @@ import           Data.Typeable
 -- dbg :: Show a => a -> () ; dbg _ = () ; dbgAssert :: Bool -> a -> a ; dbgAssert = flip const ;
 -- #endif
 
+main :: IO ()
+main = do
+  putStrLn "TODO"
+
+-- Liblary
+
 readInt :: BS.ByteString -> Integer
 readInt = fst . fromJust . BS.readInteger
 readIntList :: BS.ByteString -> [Int]
@@ -43,29 +49,3 @@ getStringList :: IO [String]
 getStringList = map (read @String . BS.unpack) . BS.words <$> BS.getLine
 getCharInputs :: IO [BS.ByteString]
 getCharInputs = BS.words <$> BS.getLine
-
-main :: IO ()
-main = do
-  n <- getInt
-  print $ solve (fromInteger n :: Int)
-
-solve :: Int -> Int
-solve n =
-  let xs = seque n
-  in counts $ zipWith (\ a b -> null a && null b) (ten xs) (eight xs)
-  where
-    ten   = map (filter (== 7) . digs 10)
-    eight = map (filter (== 7) . digs 8)
-
-seque :: Int -> [Int]
-seque n = take n [1..]
-
-digs :: Integral x => x -> x -> [x]
-digs _ 0 = []
-digs k x = digs k (x `div` k) ++ [x `mod` k]
-
-counts :: [Bool] -> Int
-counts = foldr incremnet 0
-  where
-    incremnet True acc  = 1 + acc
-    incremnet False acc = acc

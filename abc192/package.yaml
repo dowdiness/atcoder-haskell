@@ -1,0 +1,47 @@
+dependencies:
+  - base >= 4.7 && < 5
+  - bytestring
+
+# DRY for package.yaml executables:
+# <https://www.reddit.com/r/haskell/comments/haeqin/dry_for_packageyaml_executables/>
+_exe-defs: &exe-defaults
+  # dependencies:
+  # - abs
+  ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall # all warnings
+  other-modules: []
+
+# REMARK: See `README` for the langauge server support.
+executables:
+  a-exe:
+    <<: *exe-defaults
+    source-dirs: "a"
+    main:                Main.hs
+
+  b-exe:
+    <<: *exe-defaults
+    source-dirs: "b"
+    main:                Main.hs
+
+  c-exe:
+    <<: *exe-defaults
+    source-dirs: "c"
+    main:                Main.hs
+
+  d-exe:
+    <<: *exe-defaults
+    source-dirs: "d"
+    main:                Main.hs
+
+  e-exe:
+    <<: *exe-defaults
+    source-dirs: "e"
+    main:                Main.hs
+
+  f-exe:
+    <<: *exe-defaults
+    source-dirs: "f"
+    main:                Main.hs

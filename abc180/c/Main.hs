@@ -30,7 +30,18 @@ import           Data.Typeable
 
 main :: IO ()
 main = do
-  putStrLn "TODO"
+  n <- getInt
+  mapM_ print $ sort $ solve n 1 []
+
+solve :: Integer -> Integer -> [Integer] -> [Integer]
+solve n m acc
+  | m ^ (2 :: Integer) > n = acc
+  | n `mod` m == 0          = solve n (m + 1) (dividable n m) ++ acc
+  | otherwise               = solve n (m + 1) acc
+  where
+    dividable i j
+      | j /= (i `div` j) = [j, i `div` j]
+      | otherwise      = [j]
 
 -- Liblary
 

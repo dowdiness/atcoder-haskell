@@ -1,25 +1,31 @@
 cradle:
   stack:
-    - path: "./a/Main.hs"
-      component: "_acc:exe:a-exe"
+    - path: "./001/Main.hs"
+      component: "typical90:exe:001-exe"
 
-    - path: "./b/Main.hs"
-      component: "_acc:exe:b-exe"
+    - path: "./002/Main.hs"
+      component: "typical90:exe:002-exe"
 
-    - path: "./c/Main.hs"
-      component: "_acc:exe:c-exe"
+    - path: "./003/Main.hs"
+      component: "typical90:exe:003-exe"
 
-    - path: "./d/Main.hs"
-      component: "_acc:exe:d-exe"
+    - path: "./004/Main.hs"
+      component: "typical90:exe:004-exe"
 
-    - path: "./e/Main.hs"
-      component: "_acc:exe:e-exe"
+    - path: "./005/Main.hs"
+      component: "typical90:exe:005-exe"
 
-    - path: "./ex/Main.hs"
-      component: "_acc:exe:ex-exe"
+    - path: "./006/Main.hs"
+      component: "typical90:exe:006-exe"
 
-    - path: "./f/Main.hs"
-      component: "_acc:exe:f-exe"
+    - path: "./007/Main.hs"
+      component: "typical90:exe:007-exe"
 
-    - path: "./g/Main.hs"
-      component: "_acc:exe:g-exe"
+    - path: "./008/Main.hs"
+      component: "typical90:exe:008-exe"
+
+    - path: "./009/Main.hs"
+      component: "typical90:exe:009-exe"
+
+    - path: "./055/Main.hs"
+      component: "typical90:exe:055-exe"

@@ -7,5 +7,6 @@ acc new "$1" --template haskell
 cp haskell/package.yaml "$1"
 cp haskell/stack.yaml "$1"
 cat haskell/hie.yaml | sed "s;_acc;$1;g" > "$1/hie.yaml"
+cat haskell/_acc.cabal | sed "s;_acc;$1;g" > "$1/$1.cabal"
 
 : > "$1/.projectile"

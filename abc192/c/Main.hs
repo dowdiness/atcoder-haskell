@@ -38,24 +38,21 @@ getString = BS.unpack <$> BS.getLine
 getStringList = map (read @String . BS.unpack) . BS.words <$> BS.getLine
 getCharInputs = BS.words <$> BS.getLine
 
-undef :: Int
-undef = -1
-
 main :: IO ()
 main = do
   [n, k] <- getIntList
-
   print $ solve n k
 
 solve :: Int -> Int -> Int
-solve n 1 = (g1 n) - (g2 n)
-solve n k = solve ((g1 n) - (g2 n)) (k - 1)
+solve n 0 = n
+solve n 1 = f n
+solve n k = solve (f n) (k - 1)
 
-g1 :: Int -> Int
-g1 x = fromDigits $ sortBy (comparing Down) $ digs x
-
-g2 :: Int -> Int
-g2 x = fromDigits $ sort $ digs x
+f :: Int -> Int
+f x = g1 x - g2 x
+  where
+    g1 x = fromDigits $ sortBy (comparing Down) $ digs x
+    g2 x = fromDigits $ sort $ digs x
 
 -- Convert Int to list of Int
 digs :: Integral x => x -> [x]
@@ -65,4 +62,4 @@ digs x = digs (x `div` 10) ++ [x `mod` 10]
 -- Convert list of Int to one Int
 fromDigits :: [Int] -> Int
 fromDigits = foldl addDigit 0
-  where addDigit num d = 10*num + d
+  where addDigit num d = 10 * num + d

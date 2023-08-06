@@ -1,2 +1,15 @@
 .stack-work/
 *~
+
+**/.stack-work
+**/stack.yaml
+**/*lock*
+**/dist-newstyle
+**/node_modules
+**/.gitignore
+**/.projectile
+
+Main
+Main.dyn_hi
+Main.dyn_i
+Main.hi

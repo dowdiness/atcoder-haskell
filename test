@@ -1,0 +1,8 @@
+#!/usr/bin/env -S bash -x
+
+# stack script:
+# cd "$1"
+
+# cabal:
+# cabal build "$1-exe"
+oj t -N --directory "$1/test-cases" -c "stack run $1-exe"

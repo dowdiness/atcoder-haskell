@@ -16,42 +16,52 @@ _exe-defs: &exe-defaults
 
 # REMARK: See `README` for the langauge server support.
 executables:
-  a-exe:
+  001-exe:
     <<: *exe-defaults
-    source-dirs: "a"
+    source-dirs: "001"
     main:                Main.hs
 
-  b-exe:
+  002-exe:
     <<: *exe-defaults
-    source-dirs: "b"
+    source-dirs: "002"
     main:                Main.hs
 
-  c-exe:
+  003-exe:
     <<: *exe-defaults
-    source-dirs: "c"
+    source-dirs: "003"
     main:                Main.hs
 
-  d-exe:
+  004-exe:
     <<: *exe-defaults
-    source-dirs: "d"
+    source-dirs: "004"
     main:                Main.hs
 
-  e-exe:
+  005-exe:
     <<: *exe-defaults
-    source-dirs: "e"
+    source-dirs: "005"
     main:                Main.hs
 
-  f-exe:
+  006-exe:
     <<: *exe-defaults
-    source-dirs: "f"
+    source-dirs: "006"
     main:                Main.hs
 
-  g-exe:
+  007-exe:
     <<: *exe-defaults
-    source-dirs: "g"
+    source-dirs: "007"
     main:                Main.hs
 
-  ex-exe:
+  008-exe:
     <<: *exe-defaults
-    source-dirs: "ex"
+    source-dirs: "008"
+    main:                Main.hs
+
+  009-exe:
+    <<: *exe-defaults
+    source-dirs: "009"
+    main:                Main.hs
+
+  055-exe:
+    <<: *exe-defaults
+    source-dirs: "055"
     main:                Main.hs

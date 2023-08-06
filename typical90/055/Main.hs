@@ -42,7 +42,19 @@ undef = -1
 
 main :: IO ()
 main = do
-  [n, p, q] <- getIntList
-  as <- getIntList
+  [_, p, q] <- getIntList
+  xs <- getIntList
 
-  putStrLn "TODO"
+  print $ length $ filter (== q) $ map (`mod` p) $ map (foldr (*) 1) $ cb as 5
+
+cb :: [Int] -> Int -> [[Int]]
+cb _ 0 = [[]]
+cb xs n = (nxs >>= (\(nx, x) -> (x:) <$> (cb [z | (n,z) <- nxs, n>nx] (n-1)) )) where nxs = zip [1..] xs
+
+prod :: [Int] -> Int
+prod = foldr (*) 1
+
+-- solve :: [Int] -> Int -> Int -> Int
+-- solve xs p q = step 5 xs q
+--   where
+--     step n (x:xs) acc =

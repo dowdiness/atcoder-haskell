@@ -4,9 +4,8 @@ set -euE
 acc new "$1" --template haskell
 # mkdir "$1"
 
-cp _acc/package.yaml "$1"
-cp _acc/stack.yaml "$1"
-cat _acc/hie.yaml | sed "s;_acc;$1;g" > "$1/hie.yaml"
-cat _acc/_acc.cabal | sed "s;_acc;$1;g" > "$1/$1.cabal"
+cp haskell/package.yaml "$1"
+cp haskell/stack.yaml "$1"
+cat haskell/hie.yaml | sed "s;_acc;$1;g" > "$1/hie.yaml"
 
 : > "$1/.projectile"

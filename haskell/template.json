@@ -4,8 +4,5 @@
           "Main.hs"
       ],
       "submit": "Main.hs"
-  },
-  "contest": {
-    "static": ["hie.yaml", "package.yaml", "stack.yaml"]
   }
 }

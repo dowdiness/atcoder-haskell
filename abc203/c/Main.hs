@@ -16,6 +16,7 @@
 
 module Main where
 
+import qualified Control.Monad as CM
 import qualified Data.ByteString.Char8 as BS
 import           Data.Function
 import           Data.List
@@ -30,7 +31,15 @@ import           Data.Typeable
 
 main :: IO ()
 main = do
-  putStrLn "TODO"
+  [n, k] <- getIntList
+  m <- getIntTimes n
+  print $ solve (sort m) k 0
+
+solve :: [(Int, Int)] -> Int -> Int -> Int
+solve [] k l = k + l
+solve ((x, y):ms) k l
+  | (k + l - x) < 0 = k + l
+  | otherwise       = solve ms y (k + l)
 
 -- Liblary
 
@@ -49,3 +58,9 @@ getStringList :: IO [String]
 getStringList = map (read @String . BS.unpack) . BS.words <$> BS.getLine
 getCharInputs :: IO [BS.ByteString]
 getCharInputs = BS.words <$> BS.getLine
+getIntMatrix :: IO [[Int]]
+getIntMatrix = map readIntList . BS.lines <$> BS.getContents
+getIntTimes :: Int -> IO [(Int, Int)]
+getIntTimes n = CM.replicateM n $ do
+      [w,v] <- getIntList
+      return (w,v)

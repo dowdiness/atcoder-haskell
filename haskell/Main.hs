@@ -28,21 +28,24 @@ import           Data.Typeable
 -- dbg :: Show a => a -> () ; dbg _ = () ; dbgAssert :: Bool -> a -> a ; dbgAssert = flip const ;
 -- #endif
 
-readInt = fst . fromJust . BS.readInteger
-readIntList = map (read @Int . BS.unpack) . BS.words
-
-getInt = readInt <$> BS.getLine
-getIntList = readIntList <$> BS.getLine
-getString = BS.unpack <$> BS.getLine
-getStringList = map (read @String . BS.unpack) . BS.words <$> BS.getLine
-getCharInputs = BS.words <$> BS.getLine
-
-undef :: Int
-undef = -1
-
 main :: IO ()
 main = do
-  s <- getString
-  [a, b] <- getIntList
-
   putStrLn "TODO"
+
+-- Liblary
+
+readInt :: BS.ByteString -> Integer
+readInt = fst . fromJust . BS.readInteger
+readIntList :: BS.ByteString -> [Int]
+readIntList = map (read @Int . BS.unpack) . BS.words
+
+getInt :: IO Integer
+getInt = readInt <$> BS.getLine
+getIntList :: IO [Int]
+getIntList = readIntList <$> BS.getLine
+getString :: IO [Char]
+getString = BS.unpack <$> BS.getLine
+getStringList :: IO [String]
+getStringList = map (read @String . BS.unpack) . BS.words <$> BS.getLine
+getCharInputs :: IO [BS.ByteString]
+getCharInputs = BS.words <$> BS.getLine

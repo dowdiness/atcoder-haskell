@@ -1,0 +1,22 @@
+cradle:
+  stack:
+    - path: "./a/Main.hs"
+      component: "abc168:exe:a-exe"
+
+    - path: "./b/Main.hs"
+      component: "abc168:exe:b-exe"
+
+    - path: "./c/Main.hs"
+      component: "abc168:exe:c-exe"
+
+    - path: "./d/Main.hs"
+      component: "abc168:exe:d-exe"
+
+    - path: "./e/Main.hs"
+      component: "abc168:exe:e-exe"
+
+    - path: "./ex/Main.hs"
+      component: "abc168:exe:ex-exe"
+
+    - path: "./f/Main.hs"
+      component: "abc168:exe:f-exe"

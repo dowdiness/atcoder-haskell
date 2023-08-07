@@ -30,7 +30,15 @@ import           Data.Typeable
 
 main :: IO ()
 main = do
-  putStrLn "TODO"
+  [n, k] <- getIntList
+  print $ solve n k 0
+
+solve :: Int -> Int -> Int -> Int
+solve 0 _ acc = acc
+solve n k acc = solve (n - 1) k (n * k * 100 + fib k 0 + acc)
+  where
+    fib 0 w = w
+    fib z w = fib (z - 1) (z + w)
 
 -- Liblary
 

@@ -1,25 +1,25 @@
 cradle:
   stack:
     - path: "./a/Main.hs"
-      component: "_acc:exe:a-exe"
+      component: "abc236:exe:a-exe"
 
     - path: "./b/Main.hs"
-      component: "_acc:exe:b-exe"
+      component: "abc236:exe:b-exe"
 
     - path: "./c/Main.hs"
-      component: "_acc:exe:c-exe"
+      component: "abc236:exe:c-exe"
 
     - path: "./d/Main.hs"
-      component: "_acc:exe:d-exe"
+      component: "abc236:exe:d-exe"
 
     - path: "./e/Main.hs"
-      component: "_acc:exe:e-exe"
+      component: "abc236:exe:e-exe"
 
     - path: "./ex/Main.hs"
-      component: "_acc:exe:ex-exe"
+      component: "abc236:exe:ex-exe"
 
     - path: "./f/Main.hs"
-      component: "_acc:exe:f-exe"
+      component: "abc236:exe:f-exe"
 
     - path: "./g/Main.hs"
-      component: "_acc:exe:g-exe"
+      component: "abc236:exe:g-exe"

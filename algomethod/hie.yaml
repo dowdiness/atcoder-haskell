@@ -1,0 +1,4 @@
+cradle:
+  stack:
+    - path: "./greedy/q359/Main.hs"
+      component: "algomethod:exe:q359-exe"
